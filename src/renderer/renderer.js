@@ -139,6 +139,10 @@ const HanabiRenderer = GObject.registerClass(
                     volume = settings.get_int(key) / 100.0;
                     this.setVolume(volume);
                     break;
+                case 'play-pause':
+                    this._isPlaying = settings.get_boolean(key);
+                    settings.get_boolean(key) ? this.setPlay() : this.setPause();
+                    break;
                 case 'change-wallpaper':
                     changeWallpaper = settings.get_boolean(key);
                     this.setAutoWallpaper();

@@ -105,6 +105,12 @@
                 other extensions</description>
         </key>
 
+        <key name="play-pause" type="b">
+            <default>false</default>
+            <summary>Play/Pause</summary>
+            <description>Play/Pause video on click</description>
+        </key>
+
         <key name="show-panel-menu" type="b">
             <default>true</default>
             <summary>Show Panel Menu</summary>

@@ -146,6 +146,16 @@ var HanabiPanelMenu = class HanabiPanelMenu {
         }
         );
 
+        extSettings?.connect('changed', (settings, key) => {
+            if(key == 'play-pause'){
+                this._isPlaying = settings.get_boolean('play-pause');
+                playPause.label.set_text(
+                    !this._isPlaying ? _('Pause') : _('Play')
+                );
+            }
+        });
+        
+
         this.proxy.connectSignal(
             'isPlayingChanged',
             (_proxy, _sender, [isPlaying]) => {
